@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "esModuleInterop": true,
+    "module": "commonjs",
+    "noImplicitReturns": true,
+    "outDir": "lib",
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "lib": [
+      "ES2022"
+    ],
+    "noUnusedLocals": false
+  },
+  "include": [
+    "**/*.ts"
+  ],
+  "exclude": [
+    "**node_modules**",
+    "../api-common"
+  ],
+  "compileOnSave": true
+}
