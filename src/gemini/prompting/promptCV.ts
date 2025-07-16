@@ -32,7 +32,7 @@ async function runPrompt(section: CVSection, userInput: string, language: string
     if (schema === undefined || systemPrompt === undefined) throw new Error("Missing schema or system prompt for section " + section)
     const ai = new GoogleGenAI({apiKey: process.env.GEMINI_API_KEY});
     const response = await ai.models.generateContentStream({
-        model: "gemini-2.0-flash-lite",
+        model: "gemini-2.5-flash",
         contents: userInput,
         config: {
             systemInstruction: systemPrompt
