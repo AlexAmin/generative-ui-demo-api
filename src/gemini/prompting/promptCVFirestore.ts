@@ -25,7 +25,7 @@ export async function promptCVFirestore(id: string, text: string, language: stri
     await doc.set({status: "generating"})
     await Promise.all([CVSection.PersonalInfo, CVSection.Experience, CVSection.Education]
         .map((section: CVSection): Promise<void> => runPrompt(id, section, text, language, doc)))
-    await doc.update({status: "generating"})
+    await doc.update({status: "done"})
 }
 
 
@@ -67,3 +67,7 @@ async function runPrompt(id: string, section: CVSection, userInput: string, lang
         } // Parsing failed, ignore
     }
 }
+
+
+
+
