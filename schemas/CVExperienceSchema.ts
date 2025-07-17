@@ -1,8 +1,7 @@
-import {type Schema, type SchemaUnion, Type} from "@google/genai";
+import {type SchemaUnion, Type} from "@google/genai";
 
 const ExperienceBaseProperties: SchemaUnion = {
     type: Type.OBJECT,
-    required: [""],
     properties: {
         startDate: {
             type: Type.STRING,
@@ -32,7 +31,7 @@ const ExperienceBaseProperties: SchemaUnion = {
         city: {
             type: Type.STRING,
             description: "City this job took place in",
-            nullable: true
+                nullable: true
         },
         country: {
             type: Type.STRING,
@@ -47,6 +46,7 @@ const ExperienceBaseProperties: SchemaUnion = {
     }
 }
 ExperienceBaseProperties.required = Object.keys(ExperienceBaseProperties.properties as unknown as object)
+
 
 export const CVExperienceSchema: SchemaUnion = {
     type: Type.OBJECT,
